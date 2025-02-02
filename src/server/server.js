@@ -18,7 +18,7 @@ app.use('/dbQueries/cities', citiesRoutes);
 scheduleWeatherUpdates();
 
 // Запуск сервера
-const PORT = config.server.port;;
+const PORT = process.env.PORT || config.server.port;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
