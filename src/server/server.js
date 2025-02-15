@@ -2,6 +2,7 @@ import cors from 'cors';
 import express from "express";
 import config from "./config/config.js";
 import citiesRoutes from './routes/cities.js';
+import weathersRoutes from './routes/weathers.js';
 import scheduleWeatherUpdates from "./cronSchedule.js";
 
 
@@ -13,6 +14,7 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use('/dbQueries/cities', citiesRoutes);
+app.use('/dbQueries/weathers', weathersRoutes);
 
 // Запускаємо розклад АПІ-запитів
 scheduleWeatherUpdates();

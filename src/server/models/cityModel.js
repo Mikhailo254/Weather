@@ -4,6 +4,7 @@ const City = {
     async getAllCities() {
         try {
             const result = await pool.query('SELECT * FROM cities');
+
             return result.rows;
         } catch (error) {
             console.error('Помилка при отриманні міст:', error);

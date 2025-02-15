@@ -4,7 +4,7 @@ import City from "./models/cityModel.js";
 
 const scheduleWeatherUpdates = () => {
     
-    cron.schedule("*/1 * * * *", async () => {
+    cron.schedule("*/15 * * * *", async () => {
         const cities = await City.getAllCities();
         const latitude = cities.map(city => city.lat);
         const longitude = cities.map(city => city.lon);
